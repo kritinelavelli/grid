@@ -1,0 +1,13 @@
+<div class="content">
+  <my-actions
+    #actionsRef
+    [selected]="contentRef.selected"
+    [(columns)]="contentRef.columns"
+    (reset)="onReset()"
+    (delete)="contentRef.delete()"
+  ></my-actions>
+  <my-content #contentRef [data]="data"></my-content>
+</div>
+<my-info-panel
+  [opened]="actionsRef.infoPanelOpened"
+></my-info-panel>

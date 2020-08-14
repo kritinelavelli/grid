@@ -1,0 +1,55 @@
+$duration: 0.166s;
+$timing: cubic-bezier(0.4, 0, 0.2, 1);
+$shadow-2dp: 0 1px 5px 0 rgba(0, 0, 0, 0.2),
+  0 2px 2px 0 rgba(0, 0, 0, 0.2),
+  0 3px 1px -2px rgba(0, 0, 0, 0.2);
+
+:host {
+  display: inline-block;
+  border: solid transparent 1px;
+  border-radius: 4px;
+  padding: 24px;
+  cursor: pointer;
+
+  transition: border-color $duration $timing,
+    box-shadow $duration $timing,
+    background-color $duration $timing;
+
+  &:not(:hover) {
+    border-color: rgba(black, 0.12);
+  }
+
+  &:hover {
+    border-color: transparent;
+    box-shadow: $shadow-2dp;
+  }
+
+  &:not(.selected) {
+    background-color: white;
+
+    h1 {
+      color: black;
+    }
+
+    p {
+      color: rgba(0, 0, 0, 0.66);
+    }
+  }
+
+  &.selected {
+    background-color: #4285f4;
+
+    h1 {
+      color: white;
+    }
+
+    p {
+      color: white;
+    }
+  }
+}
+
+h1,
+p {
+  transition: color $duration $timing;
+}

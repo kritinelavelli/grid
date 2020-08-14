@@ -1,0 +1,19 @@
+<div class="left">
+  <button
+    *ngFor="let item of items"
+    (click)="columns = item"
+    [disabled]="columns === item"
+  >{{item}}</button>
+  <button
+    [disabled]="!selected"
+    (click)="delete.emit()"
+  >Delete ({{selected}})</button>
+  <button
+    (click)="reset.emit()"
+  >Reset</button>
+</div>
+<div class="right">
+  <button
+    (click)="infoPanelOpened = !infoPanelOpened"
+  >{{ infoPanelOpened ? 'Close info panel' : 'Open info panel' }}</button>
+</div>
